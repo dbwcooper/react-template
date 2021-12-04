@@ -1,3 +1,3 @@
-import Page from './pages'
+import Page from './pages';
 
-export default Page
+export default Page;
