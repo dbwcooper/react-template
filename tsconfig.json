@@ -16,12 +16,13 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./",
+    "types": ["react/next", "react-dom/next"],
     "paths": {
       "@utils/*": ["./src/utils/*"],
       "@components/*": ["./src/components/*"],
       "@services/*": ["./src/services/*"],
       "@img/*": ["./src/assets/images/*"],
-      "@data/*": ["./src/data/*"],
+      "@cache/*": ["src/cache/*"],
       "@pages/*": ["./src/pages/*"]
     }
   },
