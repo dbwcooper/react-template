@@ -1,6 +1,6 @@
 import * as dayjs from 'dayjs';
 
-export const goPage = (url: string) => {
+export const pushURL = (url: string) => {
   window.location.href = url;
   // window.history.replaceState(null, '', url);
 };
@@ -25,9 +25,8 @@ export function getToken(): string {
 
 export function logout(url: string) {
   setCookie('token', '', 0);
-  goPage(url);
+  pushURL(url);
 }
 
 export const getTimeFormat = (date: string) =>
-  // dayjs(date).format('YYYY年M月D日 HH:mm');
   dayjs(date).format('YYYY年M月D日');

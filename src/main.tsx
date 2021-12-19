@@ -21,15 +21,3 @@ const WrapApp = (
   </SWRConfig>
 );
 root.render(WrapApp);
-// ReactDOM.render(
-//   <SWRConfig
-//     value={{
-//       fetcher: async (resource, init) => {
-//         return fetch(resource, init).then((res) => res.json());
-//       },
-//     }}
-//   >
-//     <App />
-//   </SWRConfig>,
-//   document.getElementById('root')
-// );

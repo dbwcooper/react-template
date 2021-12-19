@@ -1,6 +1,7 @@
 import useSWR from 'swr';
 import Api from '@utils/Api';
 
+// demo
 const useUserInfo = () => {
   const { data, mutate, error } = useSWR(Api.getUserInfo);
   const isLoading = !data && !error;
