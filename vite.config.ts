@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import styleImport from 'vite-plugin-style-import';
-import path from 'path';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import styleImport from "vite-plugin-style-import";
+import path from "path";
 
 export default defineConfig({
   server: {
@@ -11,12 +11,12 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@utils': path.resolve(__dirname, './src/utils'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@services': path.resolve(__dirname, './src/services'),
-      '@img': path.resolve(__dirname, './src/assets/images'),
-      '@data': path.resolve(__dirname, './src/data'),
-      '@pages': path.resolve(__dirname, './src/pages'),
+      "@utils": path.resolve(__dirname, "./src/utils"),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@services": path.resolve(__dirname, "./src/services"),
+      "@img": path.resolve(__dirname, "./src/assets/images"),
+      "@data": path.resolve(__dirname, "./src/cache/data"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
     },
   },
   plugins: [
@@ -24,7 +24,7 @@ export default defineConfig({
     styleImport({
       libs: [
         {
-          libraryName: 'antd',
+          libraryName: "antd",
           esModule: true,
           resolveStyle: (name) => {
             return `antd/es/${name}/style/index`;

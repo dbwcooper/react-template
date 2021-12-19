@@ -1,9 +1,9 @@
-import useSWR from 'swr';
-import Api from '@utils/Api';
+import useSWR from "swr";
+import { API } from "@utils/api";
 
 // demo
 const useUserInfo = () => {
-  const { data, mutate, error } = useSWR(Api.getUserInfo);
+  const { data, mutate, error } = useSWR(API.getUserInfo);
   const isLoading = !data && !error;
   const isError = error && error.status !== 200;
   return {

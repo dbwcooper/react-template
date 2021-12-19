@@ -1,23 +1,19 @@
-import ReactDOM from 'react-dom';
-import { SWRConfig } from 'swr';
-import request from '@utils/Request';
-import App from './App';
-import './index.css';
+import ReactDOM from "react-dom";
+import { SWRConfig } from "swr";
+import request from "@utils/fetch";
+import App from "./App";
 
-const container = document.getElementById('root');
-if (!container) throw new Error('Failed to find the root element');
-
-// Create a root.
-const root = ReactDOM.createRoot(container);
+import "./index.css";
 
 const WrapApp = (
   <SWRConfig
     value={{
-      fetcher: async (resource, init) =>
-        request(resource, init).then((res) => res.json()),
+      fetcher: async (resource, init) => request(resource, init),
+      revalidateOnFocus: false,
+      errorRetryCount: 1,
     }}
   >
     <App />
   </SWRConfig>
 );
-root.render(WrapApp);
+ReactDOM.render(WrapApp, document.getElementById("root"));
